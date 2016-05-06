@@ -28,14 +28,12 @@ import java.util.HashMap;
 public class Main {
 
     public static void main (String[] args) {
-
-
-
         MagicStrings.setRootPath();
 
         AIMLProcessor.extension =  new PCAIMLProcessorExtension();
         mainFunction(args);
     }
+
     public static void mainFunction (String[] args) {
         String botName = "alice2";
         MagicBooleans.jp_tokenize = false;
@@ -92,11 +90,11 @@ public class Main {
             }
         else System.out.println("Unrecognized action "+action);
     }
+
     public static void convert(Bot bot, String action) {
         if (action.equals("aiml2csv")) bot.writeAIMLIFFiles();
         else if (action.equals("csv2aiml")) bot.writeAIMLFiles();
     }
-
 
     public static void getGloss (Bot bot, String filename) {
         System.out.println("getGloss");
@@ -114,6 +112,7 @@ public class Main {
             System.err.println("Error: " + e.getMessage());
         }
     }
+
     public static void getGlossFromInputStream (Bot bot, InputStream in)  {
         System.out.println("getGlossFromInputStream");
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -201,6 +200,4 @@ public class Main {
             ex.printStackTrace();
         }
     }
-
-
 }
