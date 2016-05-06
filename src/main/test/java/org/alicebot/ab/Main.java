@@ -1,4 +1,4 @@
-
+package org.alicebot.ab;
 /* Program AB Reference AIML 2.1 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -18,8 +18,6 @@
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
 */
-
-import org.alicebot.ab.*;
 
 import java.io.*;
 import java.util.HashMap;
