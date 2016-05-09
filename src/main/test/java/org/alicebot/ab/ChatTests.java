@@ -5,9 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class ChatTest {
-    Bot bot;
-    Chat chatSession;
+public class ChatTests {
     String pairs[][] = {
             // Mitsuku demo
             {"wen iz ur bd", "My birthday is October 9"},
@@ -22,7 +20,6 @@ public class ChatTest {
             {"Peter is taller than Sue but shorter than Harry", "Harry"},
             {"Who is shorter than Harry", "Peter, Sue"},
             {"is sue taller than Harry", "No"},
-
 
             {"Janet reads books", "Why does she read it?"},
             {"What does she do?", "She reads books"},
@@ -260,15 +257,26 @@ public class ChatTest {
 
     };
 
-
-    public ChatTest(Bot bot) {
-        super();
-        this.bot = bot;
-        this.chatSession = new Chat(bot);
-    }
-
     @Test
     public void testMultisentenceRespond() throws Exception {
+        MagicStrings.setRootPath();
+        AIMLProcessor.extension =  new PCAIMLProcessorExtension();
+
+        String botName = "alice2";
+        MagicBooleans.jp_tokenize = false;
+        MagicBooleans.trace_mode = true;
+        String action="chat";
+
+        Graphmaster.enableShortCuts = true;
+
+        Bot bot = new Bot(botName, MagicStrings.root_path, action);
+
+        MagicBooleans.jp_tokenize = false;
+        MagicBooleans.trace_mode = true;
+        Graphmaster.enableShortCuts = true;
+
+        Chat chatSession = new Chat(bot, true);
+        bot.brain.nodeStats();
 
         for (int i = 0; i < pairs.length; i++) {
             String request = pairs[i][0];
@@ -276,6 +284,5 @@ public class ChatTest {
             String actual = chatSession.multisentenceRespond(request);
             assertThat(actual, containsString(expected));
         }
-        System.out.println("Passed " + pairs.length + " test cases.");
     }
 }

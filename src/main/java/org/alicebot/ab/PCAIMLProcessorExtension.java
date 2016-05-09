@@ -123,7 +123,6 @@ public class PCAIMLProcessorExtension implements AIMLProcessorExtension {
         return result;
     }
 
-
     private String contactBirthday(Node node, ParseState ps) {
         String id = AIMLProcessor.evalTagContent(node, ps, null);
         String result = Contact.birthday(id);

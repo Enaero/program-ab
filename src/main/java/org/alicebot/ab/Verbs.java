@@ -81,7 +81,6 @@ public class Verbs {
         return was(verb);
     }
 
-
     public static void getIrregulars() {
         // Do, Did, Done, Does, Doing
         // be, was, been, is, being
@@ -98,10 +97,7 @@ public class Verbs {
                 be2been.put(triple[0], triple[2]);
                 be2is.put(triple[0], triple[3]);
                 be2being.put(triple[0], triple[4]);
-
             }
-
-
         }
     }
 
@@ -146,8 +142,6 @@ public class Verbs {
             been2be.put(beenForm, beForm);
             be2being.put(beForm, beingForm);
             being2be.put(beingForm, beForm);
-
-
         }
         be.writeAIMLSet();
         is.writeAIMLSet();

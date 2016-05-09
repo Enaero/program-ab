@@ -18,8 +18,6 @@ import java.io.StringWriter;
 
 
 public class DomUtils {
-
-
     public static Node parseFile(String fileName) throws Exception {
         File file = new File(fileName);
 

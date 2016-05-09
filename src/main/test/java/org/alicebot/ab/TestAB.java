@@ -25,14 +25,7 @@ public class TestAB {
                 bot.writeQuit();
                 System.exit(0);
             } else if (textLine.equals("sc")) sraixCache("c:/ab/data/sraixdata6.txt", chatSession);
-            else if (textLine.equals("iqtest")) {
-                ChatTest ct = new ChatTest(bot);
-                try {
-                    ct.testMultisentenceRespond();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            } else if (textLine.equals("ab")) testAB(bot, sample_file);
+            else if (textLine.equals("ab")) testAB(bot, sample_file);
             else {
                 String request = textLine;
                 if (MagicBooleans.trace_mode)
@@ -126,7 +119,6 @@ public class TestAB {
         //bot.brain.nodeStats();
     }
 
-
     public static void sraixCache(String filename, Chat chatSession) {
         int limit = 650000;
         MagicBooleans.cache_sraix = true;
@@ -147,5 +139,4 @@ public class TestAB {
             ex.printStackTrace();
         }
     }
-
 }

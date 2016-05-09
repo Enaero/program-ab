@@ -2,12 +2,14 @@ package org.alicebot.ab;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 // http://stackoverflow.com/questions/4757800/configuring-intellij-idea-for-unit-testing-with-junit
 
 /**
  * Created by User on 3/31/14.
  */
-public class InflectorTest extends TestCase {
+public class InflectorTests {
     @Test
     public void testPluralize() throws Exception {
         Inflector inflector = new Inflector();
@@ -18,8 +20,6 @@ public class InflectorTest extends TestCase {
             String actual = inflector.pluralize(singular);
             assertEquals("Pluralize " + pairs[0][0], expected, actual);
         }
-
-
     }
 
     @Test
